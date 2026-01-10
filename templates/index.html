@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini Video Search</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 AI Video Search</h1>
+            <p>Upload a video. Ask a question. Watch the clip.</p>
+        </header>
+
+        <section id="upload-section">
+            <div class="upload-box" id="drop-zone">
+                <input type="file" id="video-file" accept="video/*">
+                <p>Drag & drop video (MP4, MOV, AVI) here</p>
+                <div id="loading" class="hidden">Uploading & Processing...</div>
+            </div>
+        </section>
+
+        <section id="search-section" class="hidden">
+            <div class="search-box">
+                <input type="text" id="query-input" placeholder="e.g., 'When did the demo start?'">
+                <button onclick="searchVideo()">Find Clip</button>
+            </div>
+            
+            <div id="player-container" class="hidden" style="margin-top: 20px;">
+                <video id="main-player" controls width="100%" style="border-radius: 8px; border: 2px solid #5f6368;">
+                    Your browser does not support the video tag.
+                </video>
+                <p id="timestamp-feedback" style="color: #8ab4f8; margin-top: 5px; font-size: 0.9em;"></p>
+            </div>
+
+            <div id="results-area"></div>
+        </section>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
